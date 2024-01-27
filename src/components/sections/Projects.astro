@@ -1,0 +1,33 @@
+---
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+import Project from "../cards/Project.astro";
+
+const projects = [
+    {
+        title: "Aulapp",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "/images/project1.jpg",
+    },
+    {
+        title: "Project 2",
+        description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        image: "/images/project2.jpg",
+    },
+];
+
+---
+
+<section id="portfolio">
+    <Container className="flex flex-col items-center">
+        <Title>Proyectos realizados</Title>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, index) => (
+                <Project
+                    title={project.title}
+                    description={project.description}
+                />
+            ))}
+        </div>
+    </Container>
+</section>
