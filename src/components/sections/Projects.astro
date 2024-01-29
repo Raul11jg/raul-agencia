@@ -1,17 +1,18 @@
 ---
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
-import Project from "../cards/Project.astro";
+import ProjectCard from "../cards/ProjectCard.astro";
 
 const projects = [
     {
-        title: "Aulapp",
+        title: "Aulapp - aplicación de clases online",
         image: "/images/aulapp.jpg",
+        link: "https://aulapp.com",
     },
     {
-        title: "Caixabank",
-        description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Caixabank - aplicación de gestión y visualización de datos",
         image: "/images/APLVENcaixabank.png",
+        link: "",
     },
 ];
 
@@ -22,8 +23,10 @@ const projects = [
         <Title>Algunos de los proyectos realizados</Title>
         <div class="grid grid-cols-1 mt-6 gap-8 sm:grid-cols-2">
             {projects.map((project, index) => (
-                <Project
+                <ProjectCard
                     image={project.image}
+                    title={project.title}
+                    link={project.link}
                 />
             ))}
         </div>

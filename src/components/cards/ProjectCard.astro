@@ -1,0 +1,23 @@
+---
+import Paragraph from "../shared/Paragraph.astro";
+export interface Props{
+    image:string,
+    title:string,
+    link:string
+}
+const { title, image, link } = Astro.props
+---
+
+<div class="text-center">
+    <div class="bg-white rounded shadow-lg  shadow-black/20 dark:shadow-white/20 overflow-hidden aspect-video ease-linear duration-300 hover:scale-105">
+        {link &&
+                <a href={link}>
+                    <img src={image} alt={title} class="h-full" />
+                </a>}
+
+        {!link && <img src={image} alt={title} class="h-full" />}
+    </div>
+    <Paragraph className="mt-5 font-bold">{title}</Paragraph>
+</div>
+
+
